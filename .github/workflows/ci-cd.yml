@@ -30,9 +30,11 @@ jobs:
           context: ./angular-app
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/angular-app:latest
-      
+
       - name: Test with Docker Compose
         run: |
           docker-compose up -d
           sleep 20
           docker-compose ps
+
+
